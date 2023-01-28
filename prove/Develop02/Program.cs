@@ -11,6 +11,10 @@ class Program
 
     RandomProps randomProps = new RandomProps();
 
+    Load load = new Load();
+
+    Save save = new Save();
+
     DateTime theCurrentTime = DateTime.Now;
     string dateText = theCurrentTime.ToShortDateString();
 
@@ -40,7 +44,28 @@ class Program
       }
       else if (userAnswer == "2")
       {
-        Console.WriteLine(userRepository);
+        foreach (string line in userRepository)
+        {
+          Console.WriteLine(line);
+
+        }
+      }
+      else if (userAnswer == "3")
+      {
+        Console.Write("Enter the name of the file: ");
+
+        string fileName = Console.ReadLine();
+
+        load.LoadFile(fileName);
+        userRepository.InsertRange(0, load.GetUserRepository());
+      }
+      else if (userAnswer == "4")
+      {
+        Console.Write("Enter the name of the file: ");
+
+        string fileName = Console.ReadLine();
+
+        save.SaveFile(userRepository, fileName);
       }
 
     }

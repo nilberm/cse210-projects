@@ -1,0 +1,13 @@
+Classes para o projeto:
+
+- Main Class:
+  Classe onde vai ser chamada todas as outras classes e onde terá algumas variaveis nela como: userAnswer, userWriting e um userRepository para armazenar temporariamente a resposta do usuário.
+
+- RandomProps Class:
+  Essa classe terar uma variavel de uma lista armazenando todos os prompts que o usuário pode receber para responder, e terar uma função para aleatoriamente escolher uma dessas frases, e outra função que ira retornar essa frase escolhida.
+
+- LoadAndSave Class:
+  Essa classe irar ter uma função que irar receber o nome do arquivo que o usuário quer salvar ou quer carregar. Outra função que irar salvar os promps do usuário, e se o arquivo não existir ele criará esse arquivo, e outra função que irá carregar o arquivo pedido pelo usuário, se esse arquivo não existir deverá retornar um erro.
+
+- Display:
+  Essa classe deverá, toda vez que o usuário chamar o Load acrescentar as respostas guardadas no arquivo no repositorio temporário, para quando der um Console.ReadLine ele mostrar todas as respostas dele tanto do arquivo quando as que estão na memória temporária.
