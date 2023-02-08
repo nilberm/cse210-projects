@@ -1,9 +1,14 @@
-using System;
-
 class Program
 {
-    static void Main(string[] args)
+  static void Main(string[] args)
+  {
+    string test = " ";
+
+    while (test == " ")
     {
-        Console.WriteLine("Hello Develop03 World!");
+      Console.WriteLine("Something");
+
+      test = Console.ReadLine();
     }
+  }
 }

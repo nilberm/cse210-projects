@@ -1,6 +1,6 @@
 class Load
 {
-  private List<string> userRepository = new List<string>();
+  private List<string> userRepositoryLoad = new List<string>();
 
   public void LoadFile(string fileName)
   {
@@ -9,7 +9,7 @@ class Load
     try
     {
       string[] lines = File.ReadAllLines(newFileName);
-      userRepository.InsertRange(0, lines);
+      userRepositoryLoad.InsertRange(0, lines);
     }
     catch (IOException e)
     {
@@ -19,6 +19,6 @@ class Load
   }
   public List<string> GetUserRepository()
   {
-    return userRepository;
+    return userRepositoryLoad;
   }
 }
