@@ -31,7 +31,7 @@ public class Entry
     }
     else if (_userAnswer == "3")
     {
-      // journal.LoadJournal();
+      journal.LoadJournal();
       return "3";
     }
     else if (_userAnswer == "4")

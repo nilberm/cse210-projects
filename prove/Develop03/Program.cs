@@ -2,13 +2,10 @@ class Program
 {
   static void Main(string[] args)
   {
-    string test = " ";
 
-    while (test == " ")
-    {
-      Console.WriteLine("Something");
+    HandleStart handleStart = new HandleStart();
 
-      test = Console.ReadLine();
-    }
+    handleStart.RunApplication();
+
   }
 }
