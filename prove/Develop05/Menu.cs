@@ -9,6 +9,8 @@ public class Menu
   Goals goals = new Goals();
 
   FileGoals fileGoals = new FileGoals();
+
+  RecordEvents recordEvents = new RecordEvents();
   public void Run()
   {
     _userEntry = "0";
@@ -101,6 +103,22 @@ public class Menu
       else if (_userEntry == "5")
       {
         // Record Event
+        int tempCount = 1;
+        foreach (List<string> listOfGoal in _listOfGoals)
+        {
+          Console.WriteLine($"{tempCount}. {listOfGoal[1]}");
+
+          tempCount += 1;
+        }
+
+        Console.WriteLine("Which goal did you accomplish? ");
+
+        int goalCompleted = int.Parse(Console.ReadLine()) - 1;
+
+        recordEvents.RecordEventGoal(_totalPoints, goalCompleted.ToString(), _listOfGoals);
+
+        _totalPoints = recordEvents.GetTotalPoints();
+        _listOfGoals = recordEvents.GetListOfGoals();
       }
 
     }

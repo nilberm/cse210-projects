@@ -1,0 +1,4 @@
+0
+Simple Goal,Simple goal,qwduwqn wquid qw,100,False
+Eternal Goal,Eternal Goal,TEMPEOEPEFW EWF WEF ,300
+Checklist Goal,Checklist Goal,INinefwe e few fwe,200,0,3,300,False
