@@ -1,0 +1,21 @@
+Description: For my project, I will create a recipe management system that enables users to create and manage their recipes. The application will allow users to create recipes by providing a name, description, list of ingredients, preparation instructions, and cooking time. In addition, users will have the option to save their recipes to a file or load recipes from an existing file.
+
+The recipe manager will be built using principles such as Abstraction, Encapsulation, Inheritance, and Polymorphism. The application will include at least eight classes. The classes will be designed with clear interfaces and encapsulated implementation details, avoiding code duplication and providing flexibility through inheritance and polymorphism. The application will include a user interface with recipe management options, and the main class will coordinate all other classes' activities.
+
+Classes: 
+
+    --Menu: This class will provide the user with a list of options to choose from, including creating a new recipe, listing existing recipes, editing recipes, saving recipes, loading recipes, and quitting the program.
+
+    --CreateRecipe: This class will create a new Recipe object based on user input. It will use the RecipeBase class to collect and organize the recipe's name, description, ingredients, category, prep time, and directions.
+
+    --RecipeBase: This class will serve as the base class for the CreateRecipe class. It will contain the essential attributes of a recipe, including the name, description, ingredients (using the Ingredients class), category, prep time, and directions.
+
+    --Ingredients: This class will receive user input regarding the ingredients needed for a recipe and store this information for later use. It will contain a list of ingredients organized by category, such as ingredients for the dough and ingredients for the topping. It will have a function that will be different if is being use to create or to edit a recipe.
+
+    --ListRecipes: This class will display a formatted list of all existing recipes stored in the program. It will make use of the RecipeBase class to extract the necessary information and display it in a readable format.
+
+    --EditRecipe: This class will allow the user to select a specific recipe and modify its attributes, such as the ingredients, prep time, or directions.
+
+    --SaveRecipe: This class will save the list of recipes to a file with a user-specified name.
+ 
+    --LoadRecipe: This class will load a list of recipes from a file with a user-specified name. It will use the RecipeBase class and the Ingredients class to reconstruct the recipe objects from the saved data.
