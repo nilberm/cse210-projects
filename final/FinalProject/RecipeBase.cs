@@ -1,10 +1,10 @@
 public class RecipeBase
 {
-  private string _name;
-  private string _description;
-  private string _category;
-  private string _prepTime;
-  private string _directions;
+  protected string _name;
+  protected string _description;
+  protected string _category;
+  protected string _prepTime;
+  protected string _directions;
 
   public RecipeBase(string name, string description, string category, string prepTime, string directions)
   {
