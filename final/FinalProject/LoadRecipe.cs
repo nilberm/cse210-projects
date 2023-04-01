@@ -16,10 +16,10 @@ public class LoadRecipe
       string json = File.ReadAllText(fileName);
       JObject jsonObject = JObject.Parse(json);
 
-      if (jsonObject.ContainsKey("ListRecipes") && jsonObject.ContainsKey("ListIngredients"))
+      if (jsonObject.ContainsKey("_listRecipes") && jsonObject.ContainsKey("_listIngredients"))
       {
-        JToken recipesToken = jsonObject["ListRecipes"];
-        JToken ingredientsToken = jsonObject["ListIngredients"];
+        JToken recipesToken = jsonObject["_listRecipes"];
+        JToken ingredientsToken = jsonObject["_listIngredients"];
 
         if (recipesToken is JArray && ingredientsToken is JArray)
         {
@@ -33,6 +33,7 @@ public class LoadRecipe
       Console.WriteLine("Error loading file: " + ex.Message);
     }
   }
+
 
 
 

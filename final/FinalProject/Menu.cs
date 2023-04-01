@@ -4,7 +4,8 @@ public class Menu
 
   CreateRecipe createRecipe;
   Ingredients ingredients = new Ingredients();
-  SaveRecipe saveRecipe = new SaveRecipe();
+  SaveRecipeJson saveRecipeJson = new SaveRecipeJson();
+  SaveRecipeTxt saveRecipeTxt = new SaveRecipeTxt();
 
   ListRecipesFormatted listRecipesFormatted = new ListRecipesFormatted();
 
@@ -64,7 +65,7 @@ public class Menu
 
         Console.Clear();
 
-        if (ListRecipes.Count == 0)
+        if (ListRecipes?.Count == 0 || ListRecipes == null)
         {
           Console.WriteLine("\nNo recipes found.\n");
         }
@@ -92,7 +93,9 @@ public class Menu
         Console.Write("Enter the name for the file: ");
 
         string fileName = Console.ReadLine();
-        saveRecipe.SaveFile(ListRecipes, ListIngredients, fileName);
+        saveRecipeJson.SaveFile(ListRecipes, ListIngredients, fileName);
+        saveRecipeTxt.SaveFile(ListRecipes, ListIngredients, fileName);
+
       }
       else if (_userEntry == "4")
       {
@@ -102,16 +105,17 @@ public class Menu
 
         string fileName = Console.ReadLine();
 
-        if (File.Exists($"recipes/{fileName}"))
+        if (File.Exists($"json/{fileName}.json"))
         {
-          loadRecipe.LoadFile($"recipes/{fileName}");
+          loadRecipe.LoadFile($"json/{fileName}.json");
 
           ListRecipes = loadRecipe.GetRecipes();
           ListIngredients = loadRecipe.GetIngredients();
+
         }
         else
         {
-          Console.WriteLine("File not found.");
+          Console.WriteLine("JSON file not found.");
         }
       }
 

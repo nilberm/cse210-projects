@@ -1,23 +1,9 @@
-using Newtonsoft.Json;
-
-public class SaveRecipe
+public abstract class SaveRecipe
 {
+  public abstract void SaveFile(List<List<string>> _listRecipes, List<List<List<string>>> _listIngredients, string fileName);
 
-  public void SaveFile(List<List<string>> ListRecipes, List<List<List<string>>> ListIngredients, string fileName)
+  public virtual void SaveFileFormatted(List<List<string>> _listRecipes, List<List<List<string>>> _listIngredients, string fileName, ListRecipesFormatted listRecipesFormatted)
   {
-    string _newFileName = $"recipes/{fileName}";
-
-    var data = new
-    {
-      ListRecipes,
-      ListIngredients
-    };
-
-    string json = JsonConvert.SerializeObject(data);
-
-    using (StreamWriter sw = new StreamWriter(_newFileName))
-    {
-      sw.Write(json);
-    }
+    throw new NotImplementedException();
   }
 }
